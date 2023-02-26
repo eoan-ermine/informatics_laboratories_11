@@ -5,6 +5,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Архив статей</title>
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/archive.css">
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/article.css">
 </head>
 <body>
 <div class="header">
@@ -13,7 +15,7 @@
 <div class="archive">
 {% for post in posts %}
 	<div class="one-post">
-		<h2 class="post-title">{{ post.title }}</h2>
+		<h2 class="post-title"><a href="/article/{{post.id}}">{{ post.title }}</a></h2>
 		<div class="article-info">
 			<div class="article-author">{{ post.author.username }}</div>
 			<div class="article-created-date">{{ post.created_date }}</div>
